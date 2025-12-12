@@ -6,15 +6,15 @@ export interface Client {
   email: string;
   phone: string;
   joinDate: string;
-  status: 'active' | 'inactive' | 'pending';
+  status: "active" | "inactive" | "pending";
   subscription: Subscription;
   avatar?: string;
 }
 
 export interface Subscription {
   id: string;
-  plan: 'basic' | 'premium' | 'elite';
-  status: 'active' | 'cancelled' | 'expired';
+  plan: "basic" | "premium" | "elite";
+  status: "active" | "cancelled" | "expired";
   startDate: string;
   endDate: string;
   price: number;
@@ -60,14 +60,14 @@ export interface NutritionPlan {
 export interface Meal {
   id: string;
   name: string;
-  type: 'breakfast' | 'lunch' | 'dinner' | 'snack';
+  type: "breakfast" | "lunch" | "dinner" | "snack";
   foods: Food[];
   calories: number;
   time: string;
 }
 
 export interface Food {
-  id: string;
+  id?: string;
   name: string;
   quantity: string;
   calories: number;
@@ -100,8 +100,8 @@ export interface Booking {
   date: string;
   time: string;
   duration: number; // in minutes
-  type: 'consultation' | 'training' | 'check-in';
-  status: 'scheduled' | 'completed' | 'cancelled';
+  type: "consultation" | "training" | "check-in";
+  status: "scheduled" | "completed" | "cancelled";
   notes?: string;
 }
 
@@ -110,8 +110,8 @@ export interface Payment {
   clientId: string;
   amount: number;
   date: string;
-  status: 'pending' | 'completed' | 'failed';
-  type: 'subscription' | 'one-time';
+  status: "pending" | "completed" | "failed";
+  type: "subscription" | "one-time";
   description: string;
 }
 
@@ -123,4 +123,3 @@ export interface Analytics {
   clientGrowth: { month: string; count: number }[];
   revenueData: { month: string; revenue: number }[];
 }
-
